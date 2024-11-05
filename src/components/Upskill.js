@@ -9,95 +9,87 @@ import {
   BookOpen,
   Code,
   Files,
-  Menu,
-  Bell,
 } from "lucide-react";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
 
-const HomePage = () => {
-  const [activeChapter, setActiveChapter] = useState(1);
-  const [openPart, setOpenPart] = useState(1); // Default Part 1 to be open
+const Upskill = () => {
 
-  const sidebarItems = [
-    { icon: <BarChart2 className="w-5 h-5" />, text: "Dashboard" },
-    { icon: <BookOpen className="w-5 h-5" />, text: "Learn" },
-    { icon: <Files className="w-5 h-5" />, text: "Forums" },
-    { icon: <FileText className="w-5 h-5" />, text: "Upskill" },
-    { icon: <BarChart2 className="w-5 h-5" />, text: "Contest" },
-    { icon: <BarChart2 className="w-5 h-5" />, text: "Leaderboard" },
-  ];
-
-  const chapters = [
-    { id: 1, title: "Chapter 1", duration: "05:00:00" },
-    { id: 2, title: "Chapter 2" },
-    { id: 3, title: "Chapter 3" },
-    { id: 4, title: "Chapter 4" },
-    { id: 5, title: "Chapter 5" },
-  ];
-
-  const contentItems = [
-    {
-      icon: <Video className="w-5 h-5" />,
-      title: "Video 1",
-      duration: "10:00",
-    },
-    {
-      icon: <FileText className="w-5 h-5" />,
-      title: "Article 1",
-      duration: "10:00",
-    },
-    {
-      icon: <FileText className="w-5 h-5" />,
-      title: "Quiz 1",
-      duration: "10:00",
-    },
-    {
-      icon: <Code className="w-5 h-5" />,
-      title: "Coding Exercise 1",
-      duration: "10:00",
-    },
-    {
-      icon: <Files className="w-5 h-5" />,
-      title: "Combined Resource 1",
-      duration: "10:00",
-    },
-  ];
-
-  const parts = [
-    {
-      id: 1,
-      title: "Lorem Ipsum Dolor Sit Amet",
-      duration: "02:00:00",
-      difficulty: "Medium",
-      points: 5,
-      completion: 45, // completion in percentage
-    },
-    {
-      id: 2,
-      title: "Lorem Ipsum Dolor Sit Amet",
-      duration: "02:00:00",
-      difficulty: "Medium",
-      points: 12,
-      completion: 20, // completion in percentage
-    },
-    {
-      id: 3,
-      title: "Lorem Ipsum Dolor Sit Amet",
-      duration: "02:00:00",
-      difficulty: "Medium",
-      points: 12,
-      completion: 0, // completion in percentage
-    },
-  ];
+    const [activeChapter, setActiveChapter] = useState(1);
+    const [openPart, setOpenPart] = useState(1); // Default Part 1 to be open
+  
+    const sidebarItems = [
+      { icon: <BarChart2 className="w-5 h-5" />, text: "Dashboard" },
+      { icon: <BookOpen className="w-5 h-5" />, text: "Learn" },
+      { icon: <Files className="w-5 h-5" />, text: "Forums" },
+      { icon: <FileText className="w-5 h-5" />, text: "Upskill" },
+      { icon: <BarChart2 className="w-5 h-5" />, text: "Contest" },
+      { icon: <BarChart2 className="w-5 h-5" />, text: "Leaderboard" },
+    ];
+  
+    const chapters = [
+      { id: 1, title: "Chapter 1", duration: "05:00:00" },
+      { id: 2, title: "Chapter 2" },
+      { id: 3, title: "Chapter 3" },
+      { id: 4, title: "Chapter 4" },
+      { id: 5, title: "Chapter 5" },
+    ];
+  
+    const contentItems = [
+      {
+        icon: <Video className="w-5 h-5" />,
+        title: "Video 1",
+        duration: "10:00",
+      },
+      {
+        icon: <FileText className="w-5 h-5" />,
+        title: "Article 1",
+        duration: "10:00",
+      },
+      {
+        icon: <FileText className="w-5 h-5" />,
+        title: "Quiz 1",
+        duration: "10:00",
+      },
+      {
+        icon: <Code className="w-5 h-5" />,
+        title: "Coding Exercise 1",
+        duration: "10:00",
+      },
+      {
+        icon: <Files className="w-5 h-5" />,
+        title: "Combined Resource 1",
+        duration: "10:00",
+      },
+    ];
+  
+    const parts = [
+      {
+        id: 1,
+        title: "Lorem Ipsum Dolor Sit Amet",
+        duration: "02:00:00",
+        difficulty: "Medium",
+        points: 5,
+        completion: 45, // completion in percentage
+      },
+      {
+        id: 2,
+        title: "Lorem Ipsum Dolor Sit Amet",
+        duration: "02:00:00",
+        difficulty: "Medium",
+        points: 12,
+        completion: 20, // completion in percentage
+      },
+      {
+        id: 3,
+        title: "Lorem Ipsum Dolor Sit Amet",
+        duration: "02:00:00",
+        difficulty: "Medium",
+        points: 12,
+        completion: 0, // completion in percentage
+      },
+    ];
 
   return (
-    <div className="flex flex-col h-screen w-full bg-white">
-     <Navbar/>
-      <div className="flex flex-1 overflow-hidden">
-       <Sidebar/>
-        {/* Main Content Container with Border */}
-        <div className="flex-1 p-4 border-t border-l border-r border-[#99E4EF] rounded-lg m-4 overflow-y-auto">
+    <div className="flex-1 p-4 border-t border-l border-r border-[#99E4EF] rounded-lg m-4 overflow-y-auto">
           <div className="flex justify-between items-center mb-4">
             <div className="flex space-x-4 bg-gradient-to-b from-[#EFF5FF] to-transparent rounded-lg p-2 w-[563px] h-[82px]">
               <button className="w-[243px] h-[61px] flex items-center space-x-2 bg-transparent rounded-lg transition-all duration-200 hover:bg-white hover:shadow-lg">
@@ -244,9 +236,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default Upskill
