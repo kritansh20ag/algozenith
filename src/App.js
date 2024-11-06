@@ -1,7 +1,7 @@
 // App.js
 import React from 'react';
-import Homepage from './components/homepage';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+
+import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
 import Temp from './components/Temp';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -14,6 +14,7 @@ function App() {
       <div className='flex flex-row gap-2'>
       <Sidebar/>
       <Routes>
+        <Route path="/" element={<Navigate to="/upskill" />} />
         <Route path={"/upskill"} element={<Upskill/>}/>
         <Route path={"/dashboard"} element={<Temp/>}/>
         <Route path={"/learn"} element={<Temp/>}/>
@@ -22,7 +23,7 @@ function App() {
         <Route path={"/leaderboard"} element={<Temp/>}/>
       </Routes>
       </div>
-      {/* <Homepage/> */}
+     
       </BrowserRouter>
   );
 }
