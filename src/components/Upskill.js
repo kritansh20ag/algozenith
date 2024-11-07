@@ -8,17 +8,16 @@ import Learningmaterail from "./Learningmaterail";
 import Temp from "./Temp";
 
 const Upskill = () => {
-  // Track the selected component and whether it's open or closed
   const [selectedComponent, setSelectedComponent] = useState("learningMaterial");
-  const [isOpen, setIsOpen] = useState(true); // State to control the dropdown open/close
+  const [isOpen, setIsOpen] = useState(true); 
 
   const toggleComponent = (component) => {
     setSelectedComponent(component);
-    setIsOpen(true); // When switching to another component, open it by default
+    setIsOpen(true); 
   };
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen); // Toggle the dropdown (open/close)
+    setIsOpen(!isOpen); 
   };
 
   return (
@@ -29,10 +28,12 @@ const Upskill = () => {
     >
       <div className="flex justify-between items-center mb-0.2">
         <div className="flex space-x-4 bg-gradient-to-b from-[#EFF5FF] to-transparent rounded-lg p-2 w-[563px] h-[82px]">
-          {/* Mentor Sessions Button */}
+         
           <button
-            className="w-[243px] h-[45px] flex items-center space-x-2 bg-transparent rounded-lg transition-all duration-200 hover:bg-white hover:shadow-lg"
-            onClick={() => toggleComponent("mentorSessions")} // Toggle to Mentor Sessions
+            className={`w-[243px] h-[45px] flex items-center space-x-2 rounded-lg transition-all duration-200 ${
+              selectedComponent === "mentorSessions" ? "bg-white shadow-lg" : ""
+            }`}
+            onClick={() => toggleComponent("mentorSessions")} 
           >
             <div className="flex items-center px-5 py-3 gap-2">
               <FileText className="w-4 h-4" />
@@ -40,10 +41,12 @@ const Upskill = () => {
             </div>
           </button>
 
-          {/* Learning Material Button */}
+          
           <button
-            className="w-[258px] h-[45px] flex items-center space-x-2 bg-transparent rounded-lg transition-all duration-200 hover:bg-white hover:shadow-lg"
-            onClick={() => toggleComponent("learningMaterial")} // Toggle to Learning Material
+            className={`w-[258px] h-[45px] flex items-center space-x-2 rounded-lg transition-all duration-200 ${
+              selectedComponent === "learningMaterial" ? "bg-white shadow-lg" : ""
+            }`}
+            onClick={() => toggleComponent("learningMaterial")} 
           >
             <div className="flex items-center px-5 py-3 gap-2">
               <BookOpen className="w-4 h-4" />
@@ -54,14 +57,14 @@ const Upskill = () => {
 
         <button
           className="w-[204px] h-[45px] py-[12px] px-[16px] flex items-center space-x-2 bg-white rounded-lg border border-[#99E4EF]"
-          onClick={toggleDropdown} // Toggle dropdown open/close
+          onClick={toggleDropdown} 
         >
           <img src="./howit.png" alt="how it works" className="w-8 h-8" />
           <span>How it works</span>
         </button>
       </div>
 
-      {/* Conditionally render components based on the selected state */}
+     
       {isOpen && selectedComponent === "learningMaterial" && <Learningmaterail />}
       {isOpen && selectedComponent === "mentorSessions" && <Temp />}
     </div>

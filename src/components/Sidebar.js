@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar = ({ onSelect }) => {
-  const [selectedItem, setSelectedItem] = useState("Upskill"); // Default selected item
+  const [selectedItem, setSelectedItem] = useState("Upskill"); 
   const location = useLocation();
 
   const sidebarItems = [
